@@ -12,14 +12,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <script>
+      var firstTimeRefreshed = false;
       $(document).ready(function () {
         $(document).on("show.bs.modal", function (e) {
           if (e.target.id === "exampleModal") {
-            setTimeout(function () {
-              console.log("refresh embeddedMap");
-              var embed = document.getElementById("embeddedMap");
-              embed.data = embed.data; // refresh object data source on opening modal
-            }, 1000);
+            if (!firstTimeRefreshed) {
+              setTimeout(function () {
+                console.log("refresh embeddedMap");
+                var embed = document.getElementById("embeddedMap");
+                embed.data = embed.data; // refresh object data source on opening modal
+                firstTimeRefreshed = true;
+              }, 1000);
+            }
           }
         });
       });
