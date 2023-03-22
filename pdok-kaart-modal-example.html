@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PDOK Kaart Modal Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(document).on("show.bs.modal", function (e) {
+          if (e.target.id === "exampleModal") {
+            var embed = document.getElementById("embeddedMap");
+            embed.data = embed.data; // refresh object data source on opening modal
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModal"
+    >
+      Open PDOK Kaart
+    </button>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document" id="myModal">
+        <div class="modal-content">
+          <div class="modal-body">
+            <object
+              id="embeddedMap"
+              codetype="text/html"
+              data="https://kaart.pdok.nl/api/api.html?mapdiv=map_vialink&amp;zoom=10&amp;showscaleline=true&amp;showmouseposition=true&amp;loc=177066.095%2C%20362280.955&amp;markersdef=https%3A%2F%2Fkaart.pdok.nl%2Fapi%2Fjs%2Fpdok-markers.js&amp;layersdef=https%3A%2F%2Fkaart.pdok.nl%2Fapi%2Fjs%2Fpdok-layers.js&amp;mloc=177077.855%2C362262.72793823&amp;titel=%26nbsp%3B&amp;mt=mt4&amp;pdoklayers=BRT"
+              title="PDOK Kaart"
+              width="100%"
+              height="450"
+            ></object>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
