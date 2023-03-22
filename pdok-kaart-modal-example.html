@@ -15,8 +15,10 @@
       $(document).ready(function () {
         $(document).on("show.bs.modal", function (e) {
           if (e.target.id === "exampleModal") {
-            var embed = document.getElementById("embeddedMap");
-            embed.data = embed.data; // refresh object data source on opening modal
+            setTimeout(function () {
+              var embed = document.getElementById("embeddedMap");
+              embed.data = embed.data; // refresh object data source on opening modal
+            }, 1);
           }
         });
       });
