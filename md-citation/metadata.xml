@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://arbakker.github.io/html-examples/md-citation/citation.xslt" type="text/xsl" media="screen"?>
 <gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
   <gmd:fileIdentifier>
     <gco:CharacterString>bd65854f-e79d-407c-9276-d2def6f6412d</gco:CharacterString>
