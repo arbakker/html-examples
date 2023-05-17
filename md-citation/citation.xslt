@@ -10,7 +10,7 @@
   <xsl:output method="text" indent="yes" omit-xml-declaration="no" encoding="UTF-8"/>
   <xsl:template match="/">
     <xsl:variable name="title">
-        <xsl:value-of select="//gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString"/>,
+        <xsl:value-of select="//gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString"/>
     </xsl:variable>
     <xsl:variable name="authors">
         <xsl:for-each select="//gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/@codeListValue='principalInvestigator']">
