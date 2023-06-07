@@ -47,8 +47,13 @@
           "
           clip-path="url(#cut-off)"
         >
-          <title>Achterdeur</title>
+          <title>Achterdeur - pad</title>
         </circle>
+        <path d="M 380 700 L 314 655" style="
+        fill: rgba(238, 238, 238, 0.499);
+        stroke: #000000;
+        stroke-width: 3;
+      "><title>Achterdeur - stand meest open</title></path> 
         <rect
           width="300"
           height="200"
@@ -88,6 +93,13 @@
       />
 
       <rect
+      width="100"
+      height="10"
+      x="0"
+      y="700"
+      style="fill: rgb(255, 255, 255); stroke-width: 1; stroke: rgb(0, 0, 0)"
+    />
+      <rect
         width="100"
         height="10"
         x="100"
@@ -115,6 +127,14 @@
         y="700"
         style="fill: rgb(255, 255, 255); stroke-width: 1; stroke: rgb(0, 0, 0)"
       />
+      <rect
+      width="100"
+      height="10"
+      x="500"
+      y="700"
+      style="fill: rgb(255, 255, 255); stroke-width: 1; stroke: rgb(0, 0, 0)"
+    />
+
 
       <g>
         <animateTransform
@@ -165,19 +185,27 @@
       <label for="x">X</label>
       <input id="x" name="x" type="text" value="190" /><br />
       <label for="y">Y</label>
-      <input id="y" name="y" type="text" value="375" /><br />
+      <input id="y" name="y" type="text" value="350" /><br />
       <button id="ok">OK</button>
     </div>
   </body>
   <script>
+    function moveParasol(){
+        let x = document.getElementById("x").value;
+        let y = document.getElementById("y").value;
+        let animate = document.getElementById("animateTransform");
+        let parasol = document.getElementById("parasol");
+        let transformString = `translate(${parseInt(x)+147} ${y})`
+        alert(`x ${x}, y ${y}`)
+        parasol.setAttribute("transform", transformString)
+        animate.setAttribute("values", `-20 ${x} ${y};90 ${x} ${y}`);
+    }
+    window.onload = (event) => {
+        moveParasol()
+    };
+    
     document.getElementById("ok").onclick = function () {
-      let animate = document.getElementById("animateTransform");
-      let x = document.getElementById("x").value;
-      let y = document.getElementById("y").value;
-      let parasol = document.getElementById("parasol");
-      let transformString = `translate(${parseInt(x)+147} ${y})`
-      parasol.setAttribute("transform", transformString)
-      animate.setAttribute("values", `-20 ${x} ${y};90 ${x} ${y}`);
+        moveParasol()
     };
   </script>
 </html>
