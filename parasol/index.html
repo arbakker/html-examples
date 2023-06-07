@@ -31,23 +31,24 @@
           "
         />
 
-         
         <clipPath id="cut-off">
-            <rect x="300" y="620" width="160" height="80"/>
+          <rect x="300" y="620" width="160" height="80" />
         </clipPath>
 
         <circle
-            cx="380"
-            cy="700"
-            r="80"
-            style="
-              fill: rgba(238, 238, 238, 0.499);
-              stroke: #f0f0c9;
-              stroke-width: 1;
-              stroke-dasharray: 5, 5;
-            "
-            clip-path="url(#cut-off)"
-          ><title>Achterdeur</title></circle>
+          cx="380"
+          cy="700"
+          r="80"
+          style="
+            fill: rgba(238, 238, 238, 0.499);
+            stroke: #f0f0c9;
+            stroke-width: 1;
+            stroke-dasharray: 5, 5;
+          "
+          clip-path="url(#cut-off)"
+        >
+          <title>Achterdeur</title>
+        </circle>
         <rect
           width="300"
           height="200"
@@ -86,7 +87,6 @@
         style="fill: rgb(55, 255, 0); stroke-width: 1; stroke: rgb(0, 0, 0)"
       />
 
-    
       <rect
         width="100"
         height="10"
@@ -120,12 +120,13 @@
         <animateTransform
           type="rotate"
           attributeName="transform"
-          values="0 190 375;90 190  375"
+          values="0 190 375;90 190 375"
           dur="10s"
           repeatCount="indefinite"
+          id="animateTransform"
         />
 
-        <g transform="translate(337,375) rotate(0 -147  0)">
+        <g transform="translate(337,375)" id="parasol">
           <rect
             height="5"
             width="147"
@@ -160,5 +161,23 @@
       </g>
     </svg>
 
+    <div>
+      <label for="x">X</label>
+      <input id="x" name="x" type="text" value="190" /><br />
+      <label for="y">Y</label>
+      <input id="y" name="y" type="text" value="375" /><br />
+      <button id="ok">OK</button>
+    </div>
   </body>
+  <script>
+    document.getElementById("ok").onclick = function () {
+      let animate = document.getElementById("animateTransform");
+      let x = document.getElementById("x").value;
+      let y = document.getElementById("y").value;
+      let parasol = document.getElementById("parasol");
+      let transformString = `translate(${parseInt(x)+147} ${y})`
+      parasol.setAttribute("transform", transformString)
+      animate.setAttribute("values", `-20 ${x} ${y};90 ${x} ${y}`);
+    };
+  </script>
 </html>
