@@ -30,6 +30,17 @@
             stroke: rgb(0, 0, 0);
           "
         />
+        <rect
+          width="170"
+          height="80"
+          x="370"
+          y="465"
+          style="
+            fill: rgba(0, 59, 26, 0.946);
+            stroke-width: 1;
+            stroke: rgb(0, 0, 0);
+          "
+        ><title>Tuinset</title></rect>    
 
         <clipPath id="cut-off">
           <rect x="300" y="620" width="160" height="80" />
@@ -196,7 +207,6 @@
         let animate = document.getElementById("animateTransform");
         let parasol = document.getElementById("parasol");
         let transformString = `translate(${parseInt(x)+147} ${y})`
-        alert(`x ${x}, y ${y}`)
         parasol.setAttribute("transform", transformString)
         animate.setAttribute("values", `-20 ${x} ${y};90 ${x} ${y}`);
     }
